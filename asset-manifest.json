@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redux-hw-06-phonebook/static/css/main.dd9ff993.css",
+    "main.js": "/redux-hw-06-phonebook/static/js/main.8393683c.js",
+    "index.html": "/redux-hw-06-phonebook/index.html",
+    "main.dd9ff993.css.map": "/redux-hw-06-phonebook/static/css/main.dd9ff993.css.map",
+    "main.8393683c.js.map": "/redux-hw-06-phonebook/static/js/main.8393683c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd9ff993.css",
+    "static/js/main.8393683c.js"
+  ]
+}
