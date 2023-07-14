@@ -34,12 +34,6 @@ export const contactsReducer = (state = initialState, action) => {
   }
 };
 
-// export const addUser = data => {
-//   const newUser = {
-//     id: nanoid(),
-//     ...data,
-//   };
-
 // const isDuplicateUser = contacts.some(
 //   contact => contact.name.toLowerCase() === data.name.toLowerCase()
 // );
@@ -68,10 +62,6 @@ export const addUser = data => {
     },
   };
 };
-
-// export const deleteUser = id => {
-//   setContacts(contacts.filter(el => el.id !== id));
-// };
 
 export const deleteUser = id => {
   return {
