@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -17,31 +17,31 @@ const App = () => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
-  const addUser = data => {
-    const newUser = {
-      id: nanoid(),
-      ...data,
-    };
+  // const addUser = data => {
+  //   const newUser = {
+  //     id: nanoid(),
+  //     ...data,
+  //   };
 
-    const isDuplicateUser = contacts.some(
-      contact => contact.name.toLowerCase() === data.name.toLowerCase()
-    );
+  //   const isDuplicateUser = contacts.some(
+  //     contact => contact.name.toLowerCase() === data.name.toLowerCase()
+  //   );
 
-    if (isDuplicateUser) {
-      alert('This name is already in the contacts list.');
-      return;
-    }
+  //   if (isDuplicateUser) {
+  //     alert('This name is already in the contacts list.');
+  //     return;
+  //   }
 
-    setContacts(prev => [...prev, newUser]);
-  };
+  //   setContacts(prev => [...prev, newUser]);
+  // };
 
-  const deleteUser = id => {
-    setContacts(contacts.filter(el => el.id !== id));
-  };
+  // const deleteUser = id => {
+  //   setContacts(contacts.filter(el => el.id !== id));
+  // };
 
-  const handleCangeFilter = e => {
-    setFilter(e.target.value.trim());
-  };
+  // const handleCangeFilter = e => {
+  //   setFilter(e.target.value.trim());
+  // };
 
   const searchUserBook = () => {
     const normalised = filter.toLowerCase();
