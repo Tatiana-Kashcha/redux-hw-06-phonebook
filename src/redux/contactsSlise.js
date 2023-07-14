@@ -1,5 +1,13 @@
 import { nanoid } from 'nanoid';
 
+const initialState = {
+  contacts: [],
+};
+
+export const contactsReducer = (state, action) => {
+  return state;
+};
+
 export const addUser = data => {
   const newUser = {
     id: nanoid(),
@@ -20,8 +28,4 @@ export const addUser = data => {
 
 export const deleteUser = id => {
   setContacts(contacts.filter(el => el.id !== id));
-};
-
-export const handleCangeFilter = e => {
-  setFilter(e.target.value.trim());
 };
