@@ -12,15 +12,21 @@ export const contactsReducer = (state = initialState, action) => {
         contacts: [...state.contacts, action.payload],
       };
 
-    // return data => {
-    //   if (
-    //     state.contacts.some(
-    //       contact => contact.name.toLowerCase() === data.name.toLowerCase()
-    //     )
-    //   ) {
-    //     alert('This name is already in the contacts list.');
-    //     return;
-    //   }
+    // return {
+    //   ...state,
+    //   contacts: state.contacts.some(contact => {
+    //     if (
+    //       contact.name.toLowerCase() ===
+    //       action.payload.data.name.toLowerCase()
+    //     ) {
+    //       alert('This name is already in the contacts list.');
+    //       return;
+    //     }
+    //     return {
+    //       ...state,
+    //       contacts: [...state.contacts, action.payload],
+    //     };
+    //   }),
     // };
 
     case 'contacts/deleteUser':
