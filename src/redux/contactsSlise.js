@@ -9,7 +9,7 @@ export const contactsReducer = (state = initialState, action) => {
     case 'contacts/addUser':
       return data => {
         if (
-          state.some(
+          state.contacts.some(
             contact => contact.name.toLowerCase() === data.name.toLowerCase()
           )
         ) {
@@ -20,7 +20,7 @@ export const contactsReducer = (state = initialState, action) => {
       };
 
     case 'contacts/deleteUser':
-      return state.filter(el => el.id !== action.payload);
+      return state.contacts.filter(el => el.id !== action.payload);
     default:
       return state;
   }
