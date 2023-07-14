@@ -4,8 +4,8 @@ import { contactsReducer } from './contactsSlise';
 import { filterReducer } from './filterSlise';
 
 const rootReducer = combineReducers({
-  contacts: contactsReducer,
-  filter: filterReducer,
+  contactsUser: contactsReducer,
+  filterUser: filterReducer,
 });
 
 const enhancer = devToolsEnhancer();

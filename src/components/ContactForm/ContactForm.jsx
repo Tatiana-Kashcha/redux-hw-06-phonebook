@@ -1,10 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import * as s from './ContactForm.styled';
-// import PropTypes from 'prop-types';
 import { addUser } from 'redux/contactsSlise';
 
-// export default function ContactForm({ addUser }) {
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -26,12 +24,6 @@ export default function ContactForm() {
         break;
     }
   };
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   addUser({ name, number });
-  //   reset();
-  // };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -77,7 +69,3 @@ export default function ContactForm() {
     </s.Form>
   );
 }
-
-// ContactForm.propTypes = {
-//   addUser: PropTypes.func.isRequired,
-// };

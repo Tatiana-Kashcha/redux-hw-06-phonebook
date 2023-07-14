@@ -8,19 +8,26 @@ import * as s from './App.styled';
 // const STORAGE_KEY = 'contact-list';
 
 const App = () => {
-  const usersQuantity = useSelector(state => state.contacts.length);
+  // const usersQuantity = useSelector(
+  //   state => state.contactsUser.contacts.length
+  // );
+  // console.log(usersQuantity);
+  console.log(useSelector(state => state.contactsUser.contacts));
+  console.log(useSelector(state => state.filterUser.filter));
 
   return (
     <s.Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {usersQuantity > 0 && (
-        <>
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </>
-      )}
+      {/* {usersQuantity > 0 && 
+      ( */}
+      <>
+        <h2>Contacts</h2>
+        <Filter />
+        <ContactList />
+      </>
+      {/* )
+      } */}
     </s.Container>
   );
 };
@@ -34,17 +41,3 @@ export default App;
 // useEffect(() => {
 //   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
 // }, [contacts]);
-
-// return (
-//   <s.Container>
-//     <h1>Phonebook</h1>
-//     <ContactForm addUser={addUser} />
-//     {contacts.length > 0 && (
-//       <>
-//         <h2>Contacts</h2>
-//         <Filter filter={filter} handleCangeFilter={handleCangeFilter} />
-//         <ContactList data={searchUser} deleteUser={deleteUser} />
-//       </>
-//     )}
-//   </s.Container>
-// );

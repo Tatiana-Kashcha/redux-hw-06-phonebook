@@ -6,18 +6,23 @@ const initialState = {
 
 export const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'contacts/addUser':
-      return data => {
-        if (
-          state.contacts.some(
-            contact => contact.name.toLowerCase() === data.name.toLowerCase()
-          )
-        ) {
-          alert('This name is already in the contacts list.');
-          return;
-        }
-        prev => [...prev, action.payload];
+    case 'contacts/addUser': {
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload],
       };
+    }
+    // return data => {
+    //   if (
+    //     state.contacts.some(
+    //       contact => contact.name.toLowerCase() === data.name.toLowerCase()
+    //     )
+    //   ) {
+    //     alert('This name is already in the contacts list.');
+    //     return;
+    //   }
+    //   state.contacts(prev => [...prev, action.payload]);
+    // };
 
     case 'contacts/deleteUser':
       return state.contacts.filter(el => el.id !== action.payload);
