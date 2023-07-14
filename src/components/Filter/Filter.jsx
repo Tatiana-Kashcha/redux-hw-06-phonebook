@@ -1,7 +1,14 @@
+import { useSelector, useDispatch } from 'react-redux';
 import * as s from './Filter.styled';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { handleCangeFilter } from 'redux/filterSlise';
 
-export const Filter = ({ filter, handleCangeFilter }) => {
+// export const Filter = ({ filter, handleCangeFilter }) => {
+
+export const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(state => state.filter);
+
   return (
     <>
       <s.Description>Find contacts by name</s.Description>
@@ -12,13 +19,13 @@ export const Filter = ({ filter, handleCangeFilter }) => {
         title="Name may contain only letters, apostrophe, dash and spaces. 
           For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         value={filter}
-        onChange={handleCangeFilter}
+        onChange={e => dispatch(handleCangeFilter(e.target.value.trim()))}
       />
     </>
   );
 };
 
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  handleCangeFilter: PropTypes.func.isRequired,
-};
+// Filter.propTypes = {
+//   filter: PropTypes.string.isRequired,
+//   handleCangeFilter: PropTypes.func.isRequired,
+// };

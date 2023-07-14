@@ -5,7 +5,7 @@ const initialState = {
 export const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'filter/handleCangeFilter':
-      return { ...state, filter: action.payload.target.value.trim() };
+      return { ...state, filter: action.payload };
 
     default:
       return state;
@@ -16,10 +16,19 @@ export const filterReducer = (state = initialState, action) => {
 //   setFilter(e.target.value.trim());
 // };
 
-export const handleCangeFilter = e => {
+// export const handleCangeFilter = e => {
+//   return {
+//     type: 'filter/handleCangeFilter',
+//     payload: e,
+//   };
+// };
+// case 'filter/handleCangeFilter':
+//       return { ...state, filter: action.payload.target.value.trim()};
+
+export const handleCangeFilter = text => {
   return {
     type: 'filter/handleCangeFilter',
-    payload: e,
+    payload: text,
   };
 };
 
