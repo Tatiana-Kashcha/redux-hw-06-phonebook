@@ -33,25 +33,6 @@ export const contactsReducer = (state = initialState, action) => {
   }
 };
 
-// const isDuplicateUser = contacts.some(
-//   contact => contact.name.toLowerCase() === data.name.toLowerCase()
-// );
-
-// if (isDuplicateUser) {
-//   alert('This name is already in the contacts list.');
-//   return;
-// }
-
-// if (
-//   state.some(contact => contact.name.toLowerCase() === data.name.toLowerCase())
-// ) {
-//   alert('This name is already in the contacts list.');
-//   return;
-// }
-
-//   setContacts(prev => [...prev, newUser]);
-// };
-
 export const addUser = data => {
   return {
     type: 'contacts/addUser',
@@ -68,12 +49,3 @@ export const deleteUser = id => {
     payload: id,
   };
 };
-
-// export const searchUserBook = () => {
-//   const normalised = filter.toLowerCase();
-//   return contacts.filter(contact =>
-//     contact.name.toLowerCase().includes(normalised)
-//   );
-// };
-
-// const searchUser = searchUserBook();
