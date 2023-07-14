@@ -4,8 +4,17 @@ const initialState = {
   contacts: [],
 };
 
-export const contactsReducer = (state, action) => {
-  return state;
+export const contactsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'account/deposit':
+      return {
+        ...state,
+        balance: state.balance + action.payload,
+      };
+
+    default:
+      return state;
+  }
 };
 
 export const addUser = data => {
