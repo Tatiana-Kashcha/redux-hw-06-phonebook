@@ -8,17 +8,17 @@ import * as s from './App.styled';
 // const STORAGE_KEY = 'contact-list';
 
 const App = () => {
-  const users = useSelector(state => state.contacts.length);
+  const usersQuantity = useSelector(state => state.contacts.length);
 
   return (
     <s.Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {users > 0 && (
+      {usersQuantity > 0 && (
         <>
           <h2>Contacts</h2>
           <Filter />
-          <ContactList data={searchUser} deleteUser={deleteUser} />
+          <ContactList />
         </>
       )}
     </s.Container>

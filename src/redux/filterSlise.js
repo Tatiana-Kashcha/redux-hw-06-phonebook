@@ -31,12 +31,3 @@ export const handleCangeFilter = text => {
     payload: text,
   };
 };
-
-const searchUserBook = () => {
-  const normalised = filter.toLowerCase();
-  return contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalised)
-  );
-};
-
-export const searchUser = searchUserBook();

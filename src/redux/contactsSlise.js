@@ -71,3 +71,12 @@ export const deleteUser = id => {
     payload: id,
   };
 };
+
+// export const searchUserBook = () => {
+//   const normalised = filter.toLowerCase();
+//   return contacts.filter(contact =>
+//     contact.name.toLowerCase().includes(normalised)
+//   );
+// };
+
+// const searchUser = searchUserBook();
