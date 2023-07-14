@@ -6,12 +6,12 @@ const initialState = {
 
 export const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'contacts/addUser': {
+    case 'contacts/addUser':
       return {
         ...state,
         contacts: [...state.contacts, action.payload],
       };
-    }
+
     // return data => {
     //   if (
     //     state.contacts.some(
@@ -25,7 +25,10 @@ export const contactsReducer = (state = initialState, action) => {
     // };
 
     case 'contacts/deleteUser':
-      return state.contacts.filter(el => el.id !== action.payload);
+      return {
+        ...state,
+        contacts: state.contacts.filter(el => el.id !== action.payload),
+      };
     default:
       return state;
   }
