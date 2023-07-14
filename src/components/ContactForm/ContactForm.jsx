@@ -1,10 +1,14 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import * as s from './ContactForm.styled';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { addUser } from 'redux/contactsSlise';
 
-export default function ContactForm({ addUser }) {
+// export default function ContactForm({ addUser }) {
+export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
 
   const handleCange = evt => {
     const { name, value } = evt.target;
@@ -23,9 +27,15 @@ export default function ContactForm({ addUser }) {
     }
   };
 
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   addUser({ name, number });
+  //   reset();
+  // };
+
   const handleSubmit = event => {
     event.preventDefault();
-    addUser({ name, number });
+    dispatch(addUser({ name, number }));
     reset();
   };
 
@@ -68,6 +78,6 @@ export default function ContactForm({ addUser }) {
   );
 }
 
-ContactForm.propTypes = {
-  addUser: PropTypes.func.isRequired,
-};
+// ContactForm.propTypes = {
+//   addUser: PropTypes.func.isRequired,
+// };
