@@ -13,7 +13,7 @@ const App = () => {
   return (
     <s.Container>
       <h1>Phonebook</h1>
-      <ContactForm addUser={addUser} />
+      <ContactForm />
       {users > 0 && (
         <>
           <h2>Contacts</h2>
