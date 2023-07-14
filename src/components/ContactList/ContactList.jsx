@@ -4,8 +4,8 @@ import * as s from './ContactList.styled';
 
 export const ContactList = () => {
   const users = useSelector(state => state.contactsUser.contacts);
-  // const filter = useSelector(state => state.filterUser.filter);
-  console.log(users);
+  const filter = useSelector(state => state.filterUser.filter);
+  console.log(filter);
 
   // const searchUserBook = () => {
   //   // const normalised = filter.toLowerCase();

@@ -8,26 +8,21 @@ import * as s from './App.styled';
 // const STORAGE_KEY = 'contact-list';
 
 const App = () => {
-  // const usersQuantity = useSelector(
-  //   state => state.contactsUser.contacts.length
-  // );
-  // console.log(usersQuantity);
-  console.log(useSelector(state => state.contactsUser.contacts));
-  console.log(useSelector(state => state.filterUser.filter));
+  const usersQuantity = useSelector(
+    state => state.contactsUser.contacts.length
+  );
 
   return (
     <s.Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {/* {usersQuantity > 0 && 
-      ( */}
-      <>
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-      </>
-      {/* )
-      } */}
+      {usersQuantity > 0 && (
+        <>
+          <h2>Contacts</h2>
+          <Filter />
+          <ContactList />
+        </>
+      )}
     </s.Container>
   );
 };

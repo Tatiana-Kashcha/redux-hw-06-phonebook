@@ -21,7 +21,6 @@ export const contactsReducer = (state = initialState, action) => {
     //     alert('This name is already in the contacts list.');
     //     return;
     //   }
-    //   state.contacts(prev => [...prev, action.payload]);
     // };
 
     case 'contacts/deleteUser':
