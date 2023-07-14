@@ -1,9 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as s from './Filter.styled';
-// import PropTypes from 'prop-types';
 import { handleCangeFilter } from 'redux/filterSlise';
-
-// export const Filter = ({ filter, handleCangeFilter }) => {
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -24,8 +21,3 @@ export const Filter = () => {
     </>
   );
 };
-
-// Filter.propTypes = {
-//   filter: PropTypes.string.isRequired,
-//   handleCangeFilter: PropTypes.func.isRequired,
-// };

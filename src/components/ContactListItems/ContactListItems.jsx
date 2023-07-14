@@ -22,20 +22,3 @@ ContactListItems.propTypes = {
     id: PropTypes.string.isRequired,
   }).isRequired,
 };
-
-// return (
-//   <>
-//     <s.Name>{name}:</s.Name>
-//     <s.Number>{number}</s.Number>
-//     <s.Button onClick={() => deleteUser(id)}>Delete</s.Button>
-//   </>
-// );
-
-// ContactListItems.propTypes = {
-//   user: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//     id: PropTypes.string.isRequired,
-//   }).isRequired,
-//   deleteUser: PropTypes.func.isRequired,
-// };
