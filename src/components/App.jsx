@@ -1,11 +1,8 @@
-// import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import * as s from './App.styled';
-
-// const STORAGE_KEY = 'contact-list';
 
 const App = () => {
   const usersQuantity = useSelector(
@@ -28,11 +25,3 @@ const App = () => {
 };
 
 export default App;
-
-// const [contacts, setContacts] = useState(() => {
-//   return JSON.parse(window.localStorage.getItem(STORAGE_KEY)) ?? [];
-// });
-
-// useEffect(() => {
-//   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
-// }, [contacts]);
