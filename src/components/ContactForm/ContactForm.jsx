@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import * as s from './ContactForm.styled';
 import { addUser } from 'redux/contactsSlise';
@@ -7,6 +7,7 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
+  const users = useSelector(state => state.contactsUser.contacts);
 
   const handleCange = evt => {
     const { name, value } = evt.target;
@@ -25,8 +26,19 @@ export default function ContactForm() {
     }
   };
 
+  const isDuplicateUser = users.some(
+    contact => contact.name.toLowerCase() === name.toLowerCase()
+  );
+
   const handleSubmit = event => {
     event.preventDefault();
+
+    if (isDuplicateUser) {
+      alert('This name is already in the contacts list.');
+      reset();
+      return;
+    }
+
     dispatch(addUser({ name, number }));
     reset();
   };
