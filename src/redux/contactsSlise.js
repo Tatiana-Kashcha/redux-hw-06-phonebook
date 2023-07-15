@@ -1,4 +1,6 @@
 import { nanoid } from 'nanoid';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState = {
   contacts: [],
@@ -38,3 +40,13 @@ export const deleteUser = id => {
     payload: id,
   };
 };
+
+const persistConfig = {
+  key: 'contacts',
+  storage,
+};
+
+export const contactsPersistReducer = persistReducer(
+  persistConfig,
+  contactsReducer
+);
